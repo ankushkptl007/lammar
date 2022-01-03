@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<title>Lammar Street</title>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<script src="extLib/three.js"></script>
+	<!-- Application code-->
+	<script src="src/panorama.js"></script>
+	<script src="src/location.js"></script>
+	<script src="src/hotspot.js"></script>
+	<script src="src/transition.js"></script>
+	<!-- Libraries -->
+	<script src="src/lib/threex_fullscreen.js"></script>
+	<script src="src/lib/detector.js"></script>
+	<script src="src/lib/location_loader.js"></script>
+	<script src="src/lib/copy_shader.js"></script>
+	<script src="src/lib/effect_composer.js"></script>
+	<script src="src/lib/render_pass.js"></script>
+	<script src="src/lib/shader_pass.js"></script>
+	<script src="src/lib/mask_pass.js"></script>
+	<script src="src/lib/blur_shader.js"></script>
+
+	<!-- Initializes panoramic viewer-->
+	<script type="text/javascript">
+		window.onload = function () {
+
+			var isMobile = {
+				Android: function () {
+					return navigator.userAgent.match(/Android/i);
+				},
+				BlackBerry: function () {
+					return navigator.userAgent.match(/BlackBerry/i);
+				},
+				iOS: function () {
+					return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+				},
+				Opera: function () {
+					return navigator.userAgent.match(/Opera Mini/i);
+				},
+				Windows: function () {
+					return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+				},
+				any: function () {
+					return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+				}
+			};
+
+			// <!-- Uses HQ images in desktop versions and lower quality if mobile -->
+			if (isMobile.any()) {
+				startPanorama('resources/json/sample.json', "mobile");
+			} else {
+				startPanorama('resources/json/sample.json', "hq");
+			}
+		}
+	</script>
+
+</head>
+
+<body>
+
+<!-- Container for panorama-->
+<div id="panorama">
+
+	<!-- Map image -->
+	<figure id="map1">
+		<img id="mapImage" src="" alt="Map"/>
+	</figure>
+
+	<!-- Full screen -->
+	<figure id="fullscreen">
+		<img src="resources/icons/gui_fullscreen_icon.png" alt="Enter / Leave Fullscreen Mode"/>
+	</figure>
+
+	<!-- Scene switch: enables to create a tour with two connected spaces; remove comments to enable scene switch -->
+	<!--
+	<p id="sceneSwitch">
+		Switch Scene
+	</p> -->
+
+
+	<!-- Tool Tip; loaded from JSON -->
+	<p id="toolTip"></p>
+
+	<!-- Information pop-up -->
+	<article id="infoView">
+		<figure id="infoCloseButton">
+			<img src="resources/icons/close.png" alt="Close information pop-up"
+				 title="Close information pop-up">
+		</figure>
+
+		<!-- Title; loaded from JSON-->
+		<h1 id="infoTitle">
+		</h1>
+
+		<!-- Image and image caption; loaded from JSON -->
+		<figure id="infoImageBox">
+			<img src="" alt="Image" id="infoImage"/>
+			<figcaption id="infoCaption">
+			</figcaption>
+		</figure>
+
+		<!-- Audio file; loaded from JSON -->
+		<div id="audioPlayer">
+			<audio id="audioControls" controls>
+				<source src="" type="audio/ogg" preload="auto" id="audioSourceOgg">
+				<source src="" type="audio/mpeg" preload="auto" id="audioSourceMp3">
+			</audio>
+		</div>
+
+		<!-- Textual information; loaded from JSON -->
+		<p id="infoContent">33</p>
+	</article>
+
+</div>
+
+
+<!-- Navigation bar and buttons -->
+<div id="navigationButtonsContainer1">
+	<figure id="nav">
+		<img src="resources/icons/navigation.png"/>
+	</figure>
+	<figure class="panoNavButton" id="upNavButton1" src="resources/icons/navigation.png" alt="Navigation element">
+		<img src="resources/icons/gui_panup_icon.png" alt="Up"/>
+	</figure>
+	<figure class="panoNavButton" id="downNavButton">
+		<img src="resources/icons/gui_pandown_icon.png" alt="Down"/>
+	</figure>
+	<figure class="panoNavButton" id="leftNavButton">
+		<img src="resources/icons/gui_panleft_icon.png" alt="Left"/>
+	</figure>
+	<figure class="panoNavButton" id="rightNavButton">
+		<img src="resources/icons/gui_panright_icon.png" alt="Right"/>
+	</figure>
+	<figure class="panoNavButton" id="zoomInButton">
+		<img src="resources/icons/gui_zoomin_icon.png" alt="Zoom in"/>
+	</figure>
+	<figure class="panoNavButton" id="zoomOutButton">
+		<img src="resources/icons/gui_zoomout_icon.png" alt="Zoom out"/>
+	</figure>
+</div>
+<!--shreeja-->
+<div class="container" id="navigationButtonsContainer">
+    
+    <div class="bot">
+       <button class="plus"><img src="./resources/icons1/icons/chevron-small-down.svg" alt="">
+       </button>
+      </div>
+      <div class="bot1">
+       <button class="minus"><img src="./resources/icons1/icons/chevron-small-up.svg" alt="">
+	  </div>
+	  <div>
+<div id="map">
+      <div id="target">
+        
+        <div class="horizontalMobileScroll " >
+            <div class="horizontalMobileScroll__cell">	
+				<div class="horizontalMobileScroll__inner" id="mapSpotCurrent" >Lounge Area</div>     
+            </div>
+          
+            <div class="horizontalMobileScroll__cell">
+              <div class="horizontalMobileScroll__inner" id="mapSpot">Dining Area</div>
+            </div>
+          
+            <div class="horizontalMobileScroll__cell">
+              <div class="horizontalMobileScroll__inner">Bedroom</div>
+            </div>
+          
+            <div class="horizontalMobileScroll__cell">
+              <div class="horizontalMobileScroll__inner">Lobby</div>
+            </div>
+          
+            <div class="horizontalMobileScroll__cell">
+              <div class="horizontalMobileScroll__inner">Office C</div>
+            </div>
+          
+            <div class="horizontalMobileScroll__cell">
+              <div class="horizontalMobileScroll__inner">Retail</div>
+            </div>
+          
+            <div class="horizontalMobileScroll__cell">
+              <div class="horizontalMobileScroll__inner">7</div>
+            </div>
+          
+            
+          </div>
+      </div>
+	</div>
+</div>
+     <div class="main1">
+        <div class="row">
+            <div class="col-sm-1 leftarrow"><img src="./resources/icons1/icons/chevron-thin-left.svg" alt="">
+            </div>
+            <div class="col-sm-1 menu"><img src="./resources/icons1/icons/menu.svg" alt="" class="toggle">
+                
+
+            </div>
+            <div class="col-sm-8 Penthouse"> <p>Penthouse - Dining Area</p></div>
+            <div class="col-sm-1 direction">
+              <div class="wrap">
+                <div class="but"><img src="./resources/icons1/icons/Indicator.svg" alt=""></div>
+                <div class="content">
+                  <div class="row pt-3">
+                    <div class="col-sm-2"><img src="./resources/icons1/icons/triangle-left.svg" alt=""> </div>
+                    <div class="col-sm-2"><img src="./resources/icons1/icons/triangle-right.svg" alt=""> </div>
+                    <div class="col-sm-2" id="upNavButton"><img src="./resources/icons1/icons/triangle-up (2).svg" alt=""> </div>
+                    <div class="col-sm-2"><img src="./resources/icons1/icons/triangle-down.svg" alt=""> </div>
+                    <div class="col-sm-2"><img src="./resources/icons1/icons/zoom-in.svg" alt=""> </div>
+                    <div class="col-sm-2"><img src="./resources/icons1/icons/zoom-out.svg" alt=""> </div>
+
+                  </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-1 rightarrow"><img src="./resources/icons1/chevron-thin-right.svg" alt="">
+            </div>
+        </div>
+      </div>
+    </div>
+
+	<!--navigation js -->
+	<script>
+		$(document).ready(function() {
+	$('.bot').click(function() {
+	$(this).css('display','none');
+	  $('.bot1').css('display','block');
+	$('.main1').parent().animate({bottom:'-75'});
+	 });
+	  $('.bot1').click(function() {
+		$(this).css('display','none');
+	  $('.bot').css('display','block');
+	$('.main1').parent().animate({bottom:'30px'});
+	 });
+	});
+	</script>
+	<script>
+		$('.toggle').click(function() {
+		$('#target').toggle('slow');
+	});
+	
+	</script>
+	<script>
+	  $(".but").click (function(){
+	  // Close all open windows
+	  $(".content").stop().slideUp(300); 
+	  // Toggle this window open/close
+	  $(this).next(".content").stop().slideToggle(300);
+	  //hitter test// 
+	  $(".hitter").show()
+	});
+	
+	$(".hitter").click (function(){
+	  // Close all open windows
+	  $(".content").stop().slideUp(300); 
+	});
+	</script>
+	<!-- navigation js end -->
+	
+</body>
+</html>
