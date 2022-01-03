@@ -67,7 +67,7 @@ Location.prototype.configureMap = function (parameters, locationUid) {
 		var spots = parameters['mapSpots'];
 		// position of map spots is declared in json
 		spots.forEach(function (spot) {
-			var spotButton = document.get("button");
+			var spotButton = document.createElement("div");
 			//spotButton.className = "horizontalMobileScroll__inner";
 			if (spot.uid === locationUid) {
 				spotButton.id = "mapSpotCurrent";
