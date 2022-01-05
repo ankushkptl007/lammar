@@ -124,29 +124,7 @@
 
 
 	<!-- Navigation bar and buttons -->
-	<div id="navigationButtonsContainer1">
-		<figure id="nav">
-			<img src="resources/icons/navigation.png" />
-		</figure>
-		<figure class="panoNavButton" id="upNavButton1" src="resources/icons/navigation.png" alt="Navigation element">
-			<img src="resources/icons/gui_panup_icon.png" alt="Up" />
-		</figure>
-		<figure class="panoNavButton" id="downNavButton">
-			<img src="resources/icons/gui_pandown_icon.png" alt="Down" />
-		</figure>
-		<figure class="panoNavButton" id="leftNavButton">
-			<img src="resources/icons/gui_panleft_icon.png" alt="Left" />
-		</figure>
-		<figure class="panoNavButton" id="rightNavButton">
-			<img src="resources/icons/gui_panright_icon.png" alt="Right" />
-		</figure>
-		<figure class="panoNavButton" id="zoomInButton">
-			<img src="resources/icons/gui_zoomin_icon.png" alt="Zoom in" />
-		</figure>
-		<figure class="panoNavButton" id="zoomOutButton">
-			<img src="resources/icons/gui_zoomout_icon.png" alt="Zoom out" />
-		</figure>
-	</div>
+	
 	<!--shreeja-->
 	<div class="container" id="navigationButtonsContainer">
 
@@ -208,19 +186,28 @@
 				</div>
 				<div class="col-sm-1 direction">
 					<div class="wrap">
-						<div class="but"><img src="./resources/icons1/icons/Indicator.svg" alt=""></div>
+						<div class="but">
+							<img src="./resources/icons1/icons/Indicator.svg" alt=""></div>
 						<div class="content">
 							<div class="row pt-3 pl-3 pr-3">
-								<div class="col-sm-2"><img src="./resources/icons1/icons/triangle-left.svg" alt="">
+								<div class="col-sm-2" id="leftNavButton">
+									<img src="./resources/icons1/icons/triangle-left.svg" alt="">
 								</div>
-								<div class="col-sm-2"><img src="./resources/icons1/icons/triangle-right.svg" alt="">
+								<div class="col-sm-2" id="rightNavButton">
+									<img src="./resources/icons1/icons/triangle-right.svg" alt="">
 								</div>
-								<div class="col-sm-2 up" id="upNavButton"><img
-										src="./resources/icons1/icons/triangle-up (2).svg" alt=""> </div>
-								<div class="col-sm-2 down"><img src="./resources/icons1/icons/triangle-down.svg" alt="">
+								<div class="col-sm-2 up" id="upNavButton">
+									<img src="./resources/icons1/icons/triangle-up (2).svg" alt=""> 
 								</div>
-								<div class="col-sm-2"><img src="./resources/icons1/icons/zoom-in.svg" alt=""> </div>
-								<div class="col-sm-2"><img src="./resources/icons1/icons/zoom-out.svg" alt=""> </div>
+								<div class="col-sm-2 down" id="downNavButton">
+									<img src="./resources/icons1/icons/triangle-down.svg" alt="">
+								</div>
+								<div class="col-sm-2" id="zoomInButton">
+									<img src="./resources/icons1/icons/zoom-in.svg" alt=""> 
+								</div>
+								<div class="col-sm-2" id="zoomOutButton">
+									<img src="./resources/icons1/icons/zoom-out.svg" alt=""> 
+								</div>
 
 							</div>
 						</div>
