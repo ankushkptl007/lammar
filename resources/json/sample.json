@@ -1,28 +1,54 @@
 {
 	"startLocation": 2,
-	"maps": [
-		{
-			"uid": 1,
-			"image": "resources/maps/sampleMa.png",
-			"mapSpots": [
-				{
-					"uid": 1,
-					"tooltip": "Map Spot 1",
-					"mapPosX": 100,
-					"mapPosY": 65
-				},
-				{
-					"uid": 2,
-					"tooltip": "Map Spot 2",
-					"mapPosX": 30,
-					"mapPosY": 65
-				}
+	"maps": [{
+		"uid": 1,
+		"image": "resources/maps/sampleMa.png",
+		"mapSpots": [{
+				"uid": 1,
+				"tooltip": "Map Spot 1",
+				"thumbnail": "/resources/images/penthouse.jpg",
+				"mapPosX": 100,
+				"mapPosY": 65
+
+			},
+			{
+				"uid": 2,
+				"tooltip": "Map Spot 1",
+				"thumbnail": "/resources/images/lease.jpg",
+				"mapPosX": 100,
+				"mapPosY": 65
 				
-			]
-		}
-	],
-	"locations": [
-		{
+			},
+			{
+				"uid": 3,
+				"tooltip": "Map Spot 2",
+				"thumbnail": "/resources/images/lease.jpg",
+				"mapPosX": 30,
+				"mapPosY": 65
+				
+			},
+			{
+				"uid": 4,
+				"tooltip": "Map Spot 2",
+				"thumbnail": "/resources/images/lease.jpg",
+				"mapPosX": 30,
+				"mapPosY": 65
+				
+			},
+			{
+				"uid": 5,
+				"tooltip": "Map Spot 2",
+				"thumbnail": "/resources/images/lease.jpg",
+				"mapPosX": 30,
+				"mapPosY": 65
+				
+			}
+
+
+
+		]
+	}],
+	"locations": [{
 			"uid": 1,
 			"image": {
 				"default": "resources/panos/default/1550-Lamar-Street-360-Penthouse-4K-2.jpg",
@@ -30,15 +56,13 @@
 				"mobile": "resources/panos/mobile/1550-Lamar-Street-360-Penthouse-4K-2.jpg"
 			},
 			"mapUid": 1,
-			"transitions": [
-				{
-					"target_location": 2,
-					"tooltip": "Lounge Area",
-					"posX": -5,
-					"posY": -30,
-					"posZ": -190
-				}
-			],
+			"transitions": [{
+				"target_location": 2,
+				"tooltip": "Lounge Area",
+				"posX": -5,
+				"posY": -30,
+				"posZ": -190
+			}],
 			"cameraTargets": {
 				"2": {
 					"lat": -10,
@@ -49,18 +73,16 @@
 					"lon": 230
 				}
 			},
-		  "hotspots": [
-			{
+			"hotspots": [{
 				"uid": 1,
 				"title": "Title",
 				"tooltip": "Information",
-			 	"text": "Example with audio.",
+				"text": "Example with audio.",
 				"audio": "resources/audio/audiosample",
 				"posX": -61,
 				"posY": 114,
 				"posZ": 145
-			}
-		  ]
+			}]
 		},
 		{
 			"uid": 2,
@@ -70,42 +92,77 @@
 				"mobile": "resources/panos/mobile/1550-Lamar-Street-360-Penthouse-4K-1.jpg"
 			},
 			"mapUid": 1,
-			"transitions": [
-				{
-					"target_location": 1,
-					"tooltip": "Dining Area",
-					"posX": -175,
-					"posY": -25,
-					"posZ": -51
-				}
-			],
-	 		"cameraTargets": {
+			"transitions": [{
+				"target_location": 1,
+				"tooltip": "Dining Area",
+				"posX": -175,
+				"posY": -25,
+				"posZ": -51
+			}],
+			"cameraTargets": {
 				"1": {
 					"lat": -9,
 					"lon": 170
 				},
 				"-1": {
-			 		"lat": -9,
+					"lat": -9,
 					"lon": 170
 				}
 			},
-			"hotspots": [
-				{
-					"uid": 1,
-					"title": "Title",
-					"tooltip": "Information",
-					"text": "Example with image.",
-					"images": [
-						{
-							"figure": "resources/images/imagesample.png",
-							"caption": "Image credits or description."
-						}
-					],
-					"posX": -48,
-					"posY": 170,
-			 		"posZ": -100
-					}
-	 		]
+			"hotspots": [{
+				"uid": 1,
+				"title": "Title",
+				"tooltip": "Information",
+				"text": "Example with image.",
+				"images": [{
+					"figure": "resources/images/imagesample.png",
+					"caption": "Image credits or description."
+				}],
+				"posX": -48,
+				"posY": 170,
+				"posZ": -100
+			}]
+			
+		},
+		{
+			"uid": 3,
+			"image": {
+				"default": "resources/panos/default/1550-Lamar-Street-360-Penthouse-4K-1.jpg",
+				"hq": "resources/panos/hq/1550-Lamar-Street-360-Penthouse-4K-1.jpg",
+				"mobile": "resources/panos/mobile/1550-Lamar-Street-360-Penthouse-4K-1.jpg"
+			},
+			"mapUid": 1,
+			"transitions": [{
+				"target_location": 1,
+				"tooltip": "Dining Area",
+				"posX": -175,
+				"posY": -25,
+				"posZ": -51
+			}],
+			"cameraTargets": {
+				"1": {
+					"lat": -9,
+					"lon": 170
+				},
+				"-1": {
+					"lat": -9,
+					"lon": 170
+				}
+			},
+			"hotspots": [{
+				"uid": 1,
+				"title": "Title",
+				"tooltip": "Information",
+				"text": "Example with image.",
+				"images": [{
+					"figure": "resources/images/imagesample.png",
+					"caption": "Image credits or description."
+				}],
+				"posX": -48,
+				"posY": 170,
+				"posZ": -100
+			}]
+			
 		}
 	]
 }

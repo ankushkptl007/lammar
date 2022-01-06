@@ -67,12 +67,22 @@ Location.prototype.configureMap = function (parameters, locationUid) {
 		var spots = parameters['mapSpots'];
 		// position of map spots is declared in json
 		spots.forEach(function (spot) {
-			var spotButton = document.createElement("div");
+			// var spotButton = document.createElement("div");
 			//spotButton.className = "horizontalMobileScroll__inner";
+			var mainDiv = document.createElement("div");
+			mainDiv.className = "horizontalMobileScroll__cell ";
+			var spotButton = document.createElement("div");
+			spotButton.className = "horizontalMobileScroll__inner ";
+
 			if (spot.uid === locationUid) {
 				spotButton.id = "mapSpotCurrent";
+				spotButton.style.backgroundImage = "url( " +spot.thumbnail +")";
+				// spotButton.className += spot.uid;
 			} else {
 				spotButton.id = "mapSpot";
+				spotButton.style.backgroundImage = "url( " +spot.thumbnail +")";
+				// spotButton.className += spot.uid;
+				// console.log(spot.uid);
 			}
 			//spotButton.style.left = spot.mapPosX + "px";
 			//spotButton.style.top = spot.mapPosY + "px";

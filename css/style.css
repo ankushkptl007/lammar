@@ -48,6 +48,7 @@ padding:0px;
   border: 1px solid #707070;
   border-radius: 26px;
   opacity: 1;
+  cursor: pointer;
 }
 
 header .nav {

@@ -20,7 +20,7 @@
 </head>
 
 <body>
-  <div id="ptop" class="hideable-section">
+  <div  onclick="location.href='./panoroma.html'"  id="ptop" class="hideable-section">
     <div class="ptop"></div>
     <p>Lounge Area</p>
     <div onclick="location.href='./panoroma.html'" class="dna"></div>
@@ -66,7 +66,7 @@
               <ul class="nav nav-tabs">
                 <div class="uparrow"><i class="material-icons">&#xe316;</i>
                 </div>
-                <li class="active"><a href="" data-section="ptop" data-toggle="tab" data-url="/resources/hotspot/p-top.jpg">P
+                <li class="active"><a href="" id="1" data-section="ptop" data-toggle="tab" data-url="/resources/hotspot/p-top.jpg">P
                     TOP</a></li>
                 <li><a href="" data-section="bar" data-toggle="tab" data-url="/resources/hotspot/Restro bar.jpg"> RTL B</a>
                 </li>
@@ -111,7 +111,12 @@
     </div>
   </div>
 
+<script>
+  window.onload = function(){
+  document.getElementById('1').click();
+  }
 
+</script>
 
 </body>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
