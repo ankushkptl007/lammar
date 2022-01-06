@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html; charset-utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Lammer</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+    <link href="/css/threesixty.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/lammer_tower.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+        <div class="threesixty car dark">
+            <div class="spinner">
+            </div>
+            <div class="threesixty_images">
+                <header>
+                    <div class="row  ">
+                        <div class="col-xl-2 col-lg-2  ">
+                            <p class="logo" onclick="location.href='./index.html'"> Logo</p>
+                        </div>
+                        <div class="col-xl-9 col-lg-9 humburge">
+                            <div id="hamburger-menu" data-toggle="ham-navigation" class="hamburger-menu-button"><span
+                                    class="hamburger-menu-button-open">Menu</span></div>
+                            <nav id="ham-navigation" class="ham-menu">
+                                <ul class="menu">
+                                    <li><a href="" class="">Home</a></li>
+                                    <li class=""><a href="#">EXPLORE</a></li>
+                                    <li><a href="#">FEATURE</a></li>
+                                    <li><a href="#">LEASE</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </header>
+                <footer>
+                    <div class="tower-text">
+                        <p>LAMAR TOWER</p>
+                    </div>
+                    <div class="explore">
+                        <p onclick="location.href='./lammer_tower.html'"> Explore More</p>
+                    </div>
+                </footer>
+            </div>
+    
+        </div>
+        
+        <script>
+            $(document).ready(function () {
+                var three60 = $('.car').ThreeSixty({
+                    totalFrames: 67,
+                    endFrame: 67,
+                    currentFrame: 1,
+                    imgList: '.threesixty_images',
+                    progress: '.spinner',
+                    imagePath: 'assets/hand/',
+                    filePrefix: '',
+                    ext: '.jpg',
+                    width: 1200,
+                    height: 685,
+                    navigation: true,
+                    fullscreen: true,
+                    responsive: true,
+                    disableSpin: false,
+                    zeroPadding: false,
+                    theme: 'dark'
+    
+                });
+            });
+        </script>
+ 
+  
+    <!-- <script src="/vendor/jquery.min.js"></script> -->
+    <!-- <script src="/vendor/screenfull.js"></script> -->
+    <script src="/js/threesixty.js"></script>
+    <script src="/js/index.js"></script>
+
+   
+    <script>
+        function slideOverlay() {
+            let overlay = document.getElementById('overlay');
+            overlay.classList.add('slideShowView');
+            overlay.classList.add('animate');
+
+        }
+
+        function showblocks(params) {
+            let blocks = document.getElementsByClassName('dropdown');
+            let element = document.getElementById('explore');
+            element.classList.add('animated');
+            element.classList.add('moveback');
+            for (const b of blocks) {
+                b.classList.add('animated');
+            }
+            console.log(blocks.length);
+
+        }
+
+        function closeSlideShow() {
+            let overlay = document.getElementById('overlay');
+            overlay.classList.remove('slideShowView');
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body
+  {
+  
+    overflow: hidden;
+   margin:0 auto;
+   padding:0px;
+
+  
+  }
+  /* Lease PAGE */
+  .header{
+    background-color: #193b68;
+  } 
+  
+  .header .nav {
+    padding-top: 30px;
+  }
+  .header .nav .nav-item{
+    color: #fff;
+    font-size: 21px;
+  }
+  section .lease{
+    color: #193b68;
+      font-size: 34px;
+      font-weight: 700;
+  }
+.logo {
+    position: relative;
+   text-align: center;
+    z-index: 2;
+    margin-left: 54px;
+    padding: 10px;
+    width: 200px;
+    height: 70px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 26px;
+    opacity: 1;
+    font: normal normal normal 32px/42px Segoe UI;
+letter-spacing: 0px;
+color: #707070;
+}
+.contain{
+    margin: 50px;
+}
+.lease-img img{
+    border-radius: 25px;
+}
+.lease{
+    text-align: left;
+font: normal normal 600 44px/65px Poppins;
+letter-spacing: 0px;
+color: #193B68;
+opacity: 1;
+}
+.lease-text p{
+    font: normal normal normal 21px/35px Poppins;
+letter-spacing: 0px;
+color: #000000;
+}

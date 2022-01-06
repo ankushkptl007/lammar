@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Image Mapping</title>
+  <link rel="stylesheet" href="./css/lammer_tower.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<html>
+
+<head>
+   
+</head>
+
+<body  onpageshow="showblocks()">
+    <!-- <header style="height: 8rem; width: 100%; background-color: steelblue;">
+
+    </header> -->
+    <!-- <div id="overlay" class="overlay zoomIn">
+        <div>
+            <img src="/dist/2.jpg" width="100%" height="100%" alt="">
+            <a onclick="closeSlideShow()" style="color: snow; position: absolute;
+            top: 0;
+            padding: 1rem;
+            cursor: pointer;
+            right: 2rem;
+            font-size: 7vw;">
+                <span>&times;</span>
+            </a>
+
+        </div>
+
+    </div> -->
+
+
+  
+    <div style="position: relative; width: 100%; height:700; overflow: hidden;">
+      <div class="image">
+        <img src="/resources/hotspot/lammer tower.jpg" alt="college campus" usemap="#campus" width="" height="">
+      </div>
+        <div class="explore fadeOut" id="explore" style="position: absolute;
+       
+        width: 100%;
+        top: 30%;
+        z-index: 2;
+        ">
+            <div class="animate" style=" display: flex;justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            -webkit-animation-name: fadeIn;
+            animation-name: fadeIn
+            ">
+                <!-- <p style="color: white; font-size: 3vw; margin-bottom: 0;">This is Something Text</p>
+                <p style="color: white;">Press this to visit</p> -->
+                <div>
+                </div>
+            </div>
+
+
+        </div>
+      
+        <div >
+            <map name="campus">
+                <div class="dropdown fadeIn">
+                    <area class="area blockA dropbtn" shape="circle" coords="892,420,405" alt="Computer"  style="cursor: pointer;">
+                    <div class="OfficeB blockAA "><p>Office B </p> </div>
+                    <!-- <div class="blockA dropdown-content">
+                      <p style="text-align: center;">This is some content</p>
+                      <div style="display: flex; justify-content: center;">
+                        <button onclick="slideOverlay()">click</button>
+                      </div>
+                     
+                    </div> -->
+                </div>
+
+                <div class="dropdown delay-1s fadeIn">
+                  
+                    <area onclick="location.href='./sidebar.html'" class="area blockB dropbtn" shape="circle" coords="655,175,10" alt="Computer"  style="cursor: pointer;">
+                    
+
+                    <div class="penthouse  blockBB "><p>Penthouse</p></div>
+
+                    <!-- <div class="blockB dropdown-content">
+                      <p style="text-align: center;">This is some content</p>
+                      <div style="display: flex; justify-content: center;">
+                        <button onclick="slideOverlay()">click</button>
+                      </div>
+                     
+                    </div> -->
+                </div>
+
+                <div class="dropdown delay-2s fadeIn">
+                    <area class="area blockC dropbtn" shape="circle" coords="120,215,10" alt="Computer"  style="cursor: pointer;">
+                    <div class="StreetA blockCC"><p>Street A</p></div>
+
+                    <!-- <div class="blockC dropdown-content">
+                      <p style="text-align: center;">This is some content</p>
+                      <div style="display: flex; justify-content: center;">
+                        <button onclick="slideOverlay()">click</button>
+                      </div>
+                     
+                    </div> -->
+                </div>
+
+                <div class="dropdown delay-3s fadeIn">
+                    <area class="area blockD dropbtn" shape="circle" coords="250,305,10" alt="Computer"  style="cursor: pointer;">
+                    <div class="Restaurant blockDD"><p>Restaurant</p></div>
+
+                    <!-- <div class="blockD dropdown-content">
+                      <p style="text-align: center;">This is some content</p>
+                      <div style="display: flex; justify-content: center;">
+                        <button onclick="slideOverlay()">click</button>
+                      </div>
+                     
+                    </div> -->
+                </div>
+
+                <div class="dropdown delay-4s fadeIn ">
+                    <area class="area blockE dropbtn" shape="circle" coords="990,350,10" alt="Computer"  style="cursor: pointer;">
+                    <div class="Retail blockEE"><p>Retail</p></div>
+
+                    <!-- <div class="blockE dropdown-content">
+                      <p style="text-align: center;">This is some content</p>
+                      <div style="display: flex; justify-content: center;">
+                        <button onclick="slideOverlay()">click</button>
+                      </div>
+                     
+                    </div> -->
+                </div>
+                <div class="dropdown delay-4s fadeIn ">
+                    <area class="area blockF dropbtn" shape="circle" coords="270,350,10" alt="Computer"  style="cursor: pointer;">
+                    <div class="StreetB blockFF"><p>Street B</p></div>
+
+                    <!-- <div class="blockE dropdown-content">
+                      <p style="text-align: center;">This is some content</p>
+                      <div style="display: flex; justify-content: center;">
+                        <button onclick="slideOverlay()">click</button>
+                      </div>
+                     
+                    </div> -->
+                </div>
+             </map>
+        </div>
+        <header>
+            
+          <div class="d-flex justify-content-between ">
+              <div class="logoo ">
+                  <p class="logo"> Logo</p>
+    
+              </div>
+              <!-- <div class=" humburge">
+                  <div id="hamburger-menu" data-toggle="ham-navigation" class="hamburger-menu-button"><span
+                          class="hamburger-menu-button-open"></span></div>
+                  <nav id="ham-navigation" class="ham-menu">
+                      <ul class="menu">
+                          <li><a href="" class="">Home</a></li>
+                          <li class=""><a href="#">EXPLORE</a></li>
+                          <li><a href="#">FEATURE</a></li>
+                          <li><a href="#">LEASE</a></li>
+    
+                      </ul>
+                  </nav>
+              </div>
+     -->
+          </div>
+      </header>
+        <footer>
+            <div class="tower-text">
+                 <p>LAMAR TOWER</p>
+            </div>
+           
+
+         </footer>
+    </div>
+
+  
+    <script>
+      function slideOverlay() {
+              let overlay = document.getElementById('overlay');
+              overlay.classList.add('slideShowView');
+              overlay.classList.add('animate');
+  
+          }
+  
+          function showblocks(params) {
+              let blocks = document.getElementsByClassName('dropdown');
+              let element = document.getElementById('explore');
+              element.classList.add('animated');
+              element.classList.add('moveback');
+              for (const b of blocks) {
+                  b.classList.add('animated');
+              }
+              console.log(blocks.length);
+  
+          }
+  
+          function closeSlideShow() {
+              let overlay = document.getElementById('overlay');
+              overlay.classList.remove('slideShowView');
+  
+          }
+  </script>
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
+<!-- partial -->
+

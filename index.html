@@ -2,264 +2,76 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lammer</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/home.css">
+    <!-- icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	<title>Lammar Street</title>
-	<meta charset="utf-8">
-	<meta name="viewport"
-		content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="style.css">
-	<script src="extLib/three.js"></script>
-	<!-- Application code-->
-	<script src="src/panorama.js"></script>
-	<script src="src/location.js"></script>
-	<script src="src/hotspot.js"></script>
-	<script src="src/transition.js"></script>
-	<!-- Libraries -->
-	<script src="src/lib/threex_fullscreen.js"></script>
-	<script src="src/lib/detector.js"></script>
-	<script src="src/lib/location_loader.js"></script>
-	<script src="src/lib/copy_shader.js"></script>
-	<script src="src/lib/effect_composer.js"></script>
-	<script src="src/lib/render_pass.js"></script>
-	<script src="src/lib/shader_pass.js"></script>
-	<script src="src/lib/mask_pass.js"></script>
-	<script src="src/lib/blur_shader.js"></script>
-
-	<!-- Initializes panoramic viewer-->
-	<script type="text/javascript">
-		window.onload = function () {
-
-			var isMobile = {
-				Android: function () {
-					return navigator.userAgent.match(/Android/i);
-				},
-				BlackBerry: function () {
-					return navigator.userAgent.match(/BlackBerry/i);
-				},
-				iOS: function () {
-					return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-				},
-				Opera: function () {
-					return navigator.userAgent.match(/Opera Mini/i);
-				},
-				Windows: function () {
-					return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
-				},
-				any: function () {
-					return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() ||
-						isMobile.Windows());
-				}
-			};
-
-			// <!-- Uses HQ images in desktop versions and lower quality if mobile -->
-			if (isMobile.any()) {
-				startPanorama('resources/json/sample.json', "mobile");
-			} else {
-				startPanorama('resources/json/sample.json', "hq");
-			}
-		}
-	</script>
 
 </head>
 
-<body>
-
-	<!-- Container for panorama-->
-	<div id="panorama">
-
-		<!-- Map image -->
-		<figure id="map1">
-			<img id="mapImage" src="" alt="Map" />
-		</figure>
-
-		<!-- Full screen -->
-		<figure id="fullscreen">
-			<img src="resources/icons/gui_fullscreen_icon.png" alt="Enter / Leave Fullscreen Mode" />
-		</figure>
-
-		<!-- Scene switch: enables to create a tour with two connected spaces; remove comments to enable scene switch -->
-		<!--
-	<p id="sceneSwitch">
-		Switch Scene
-	</p> -->
+<body class="container-fluid">
 
 
-		<!-- Tool Tip; loaded from JSON -->
-		<p id="toolTip"></p>
+    <div id="video_wrapper">
+        <video autoplay muted loop>
+            <source src="./resources/timelaps/Timelapse Loop.mp4" type="video/mp4">
+        </video>
 
-		<!-- Information pop-up -->
-		<article id="infoView">
-			<figure id="infoCloseButton">
-				<img src="resources/icons/close.png" alt="Close information pop-up" title="Close information pop-up">
-			</figure>
+        <header>
+            <div class="row mt-5 ml-3 ">
+                <div class="col-xl-2 col-lg-2  ">
+                    <p class="logo"> Logo</p>
 
-			<!-- Title; loaded from JSON-->
-			<h1 id="infoTitle">
-			</h1>
+                </div>
+                <div class="col-xl-9 col-lg-9 humburge">
+                    <div id="hamburger-menu" data-toggle="ham-navigation" class="hamburger-menu-button"><span
+                            class="hamburger-menu-button-open"></span></div>
+                    <nav id="ham-navigation" class="ham-menu">
+                        <ul class="menu">
+                            <li><a href="" class="">Home</a></li>
+                            <li class=""><a href="#">EXPLORE</a></li>
+                            <li><a href="#">FEATURE</a></li>
+                            <li><a href="#">LEASE</a></li>
 
-			<!-- Image and image caption; loaded from JSON -->
-			<figure id="infoImageBox">
-				<img src="" alt="Image" id="infoImage" />
-				<figcaption id="infoCaption">
-				</figcaption>
-			</figure>
+                        </ul>
+                    </nav>
+                </div>
 
-			<!-- Audio file; loaded from JSON -->
-			<div id="audioPlayer">
-				<audio id="audioControls" controls>
-					<source src="" type="audio/ogg" preload="auto" id="audioSourceOgg">
-					<source src="" type="audio/mpeg" preload="auto" id="audioSourceMp3">
-				</audio>
-			</div>
+            </div>
+        </header>
+        <!-- <main>
+            <i class="material-icons" style="font-size:36px">keyboard_arrow_right</i>
 
-			<!-- Textual information; loaded from JSON -->
-			<p id="infoContent">33</p>
-		</article>
+        </main> -->
+        <footer>
+            <div class="row">
+                <h3 class="explore">ENTER <span> <a href="threesixty.html" id="next"><span><img
+                                    src="./resources/icons1/icons/Enter-arrow.svg" alt=""></span></a>
 
-	</div>
+                    </span>
+                </h3>
 
+            </div>
+        </footer>
 
-	<!-- Navigation bar and buttons -->
-	
-	<!--shreeja-->
-	<div class="container" id="navigationButtonsContainer">
+    </div>
 
-		<div class="bot">
-			<button class="plus"><img src="./resources/icons1/icons/chevron-small-down.svg" alt="">
-			</button>
-		</div>
-		<div class="bot1">
-			<button class="minus"><img src="./resources/icons1/icons/chevron-small-up.svg" alt="">
-		</div>
-		<div>
-			<div id="map">
-				<div id="target">
-
-					<div class="horizontalMobileScroll ">
-						<div class="horizontalMobileScroll__cell">
-							<div class="horizontalMobileScroll__inner" id="mapSpotCurrent">Lounge Area</div>
-						</div>
-
-						<div class="horizontalMobileScroll__cell">
-							<div class="horizontalMobileScroll__inner" id="mapSpot">Dining Area</div>
-						</div>
-
-						<div class="horizontalMobileScroll__cell">
-							<div class="horizontalMobileScroll__inner">Bedroom</div>
-						</div>
-
-						<div class="horizontalMobileScroll__cell">
-							<div class="horizontalMobileScroll__inner">Lobby</div>
-						</div>
-
-						<div class="horizontalMobileScroll__cell">
-							<div class="horizontalMobileScroll__inner">Office C</div>
-						</div>
-
-						<div class="horizontalMobileScroll__cell">
-							<div class="horizontalMobileScroll__inner">Retail</div>
-						</div>
-
-						<div class="horizontalMobileScroll__cell">
-							<div class="horizontalMobileScroll__inner">7</div>
-						</div>
+ 
 
 
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="main1">
-			<div class="row">
-				<div class="col-sm-1 leftarrow"><img src="./resources/icons1/icons/chevron-thin-left.svg" alt="">
-				</div>
-				<div class="col-sm-1 menu"><img src="./resources/icons1/icons/menu.svg" alt="" class="toggle">
-
-
-				</div>
-				<div class="col-sm-8 Penthouse">
-					<p>Penthouse - Dining Area</p>
-				</div>
-				<div class="col-sm-1 direction">
-					<div class="wrap">
-						<div class="but">
-							<img src="./resources/icons1/icons/Indicator.svg" alt=""></div>
-						<div class="content">
-							<div class="row pt-3 pl-3 pr-3">
-								<div class="col-sm-2" id="leftNavButton">
-									<img src="./resources/icons1/icons/triangle-left.svg" alt="">
-								</div>
-								<div class="col-sm-2" id="rightNavButton">
-									<img src="./resources/icons1/icons/triangle-right.svg" alt="">
-								</div>
-								<div class="col-sm-2 up" id="upNavButton">
-									<img src="./resources/icons1/icons/triangle-up (2).svg" alt=""> 
-								</div>
-								<div class="col-sm-2 down" id="downNavButton">
-									<img src="./resources/icons1/icons/triangle-down.svg" alt="">
-								</div>
-								<div class="col-sm-2" id="zoomInButton">
-									<img src="./resources/icons1/icons/zoom-in.svg" alt=""> 
-								</div>
-								<div class="col-sm-2" id="zoomOutButton">
-									<img src="./resources/icons1/icons/zoom-out.svg" alt=""> 
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-sm-1 rightarrow"><img src="./resources/icons1/icons/chevron-thin-right.svg" alt="">
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!--navigation js -->
-	<script>
-		$(document).ready(function () {
-			$('.bot').click(function () {
-				$(this).css('display', 'none');
-				$('.bot1').css('display', 'block');
-				$('.main1').parent().animate({
-					bottom: '-75'
-				});
-			});
-			$('.bot1').click(function () {
-				$(this).css('display', 'none');
-				$('.bot').css('display', 'block');
-				$('.main1').parent().animate({
-					bottom: '30px'
-				});
-			});
-		});
-	</script>
-	<script>
-		$('.toggle').click(function () {
-			$('#target').toggle('slow');
-		});
-	</script>
-	<script>
-		$(".but").click(function () {
-			// Close all open windows
-			$(".content").stop().slideUp(300);
-			// Toggle this window open/close
-			$(this).next(".content").stop().slideToggle(300);
-			//hitter test// 
-			$(".hitter").show()
-		});
-
-		$(".hitter").click(function () {
-			// Close all open windows
-			$(".content").stop().slideUp(300);
-		});
-	</script>
-	<!-- navigation js end -->
 
 </body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script src="/js/index.js"></script>
 
 </html>

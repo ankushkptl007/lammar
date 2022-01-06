@@ -442,7 +442,7 @@ audio {
 	position: absolute;
 	bottom: 14px;
 	left: -202px;
-	background: #000000 0% 0% no-repeat padding-box;
+	background: #00000089  0% 0% no-repeat padding-box;
 	border-radius: 18px 18px 18px 18px;
 }
 
@@ -452,7 +452,7 @@ audio {
 	--cell-basis: calc((100% - var(--cell-padding) * 2) / var(--items));
 	display: flex;
 	overflow: auto;
-	height: 14rem;
+	height: 19rem;
 }
 
 .horizontalMobileScroll__cell {
